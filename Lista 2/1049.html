@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal</title>
+</head>
+<body>
+    <h1>Animal</h1>
+    <div>
+        Neste problema, você deverá ler 3 palavras que definem o tipo de animal possível segundo o esquema abaixo, da esquerda para a direita.  
+        Em seguida conclua qual dos animais seguintes foi escolhido, através das três palavras fornecidas.
+    </div>
+    <div>
+        <p>Subfilo: <input type="text" name="n1" id="txtn1"></p>
+        <p>Classe: <input type="text" name="n2" id="txtn2"></p>
+        <p>Ordem: <input type="text" name="n3" id="txtn3"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txn1 = document.getElementById('txtn1')
+        const txn2 = document.getElementById('txtn2')
+        const txn3 = document.getElementById('txtn3')
+        const res = document.getElementById('res')
+        const subfilo = String(txn1.value)
+        const classe = String(txn2.value)
+        const ordem = String(txn3.value)
+        if (subfilo == 'vertebrado') {
+            if (classe == 'ave') {
+                if (ordem == 'carnivoro') {
+                    res.innerHTML = 'aguia'
+                } else {
+                    res.innerHTML = 'pomba'
+                }
+            } else {
+                if (ordem == 'onivoro') {
+                    res.innerHTML = 'homem'
+                } else {
+                    res.innerHTML = 'vaca'
+                }
+            }
+        } else {
+            if (classe == 'inseto') {
+                if (ordem == 'hematofago') {
+                    res.innerHTML = 'pulga'
+                } else {
+                    res.innerHTML = 'lagarta'
+                }
+            } else {
+                if (ordem == 'hematofago') {
+                    res.innerHTML = 'sanguessuga'
+                } else {
+                    res.innerHTML = 'minhoca'
+                }
+            }
+        }
+        }
+    </script>
+</body>
+</html>

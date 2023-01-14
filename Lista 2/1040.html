@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media 3</title>
+</head>
+<body>
+    <h1>Media 3</h1>
+    <div>
+        <p>Leia quatro números (N1, N2, N3, N4), cada um deles com uma casa decimal, correspondente às quatro notas de um aluno. 
+            Calcule a média com pesos 2, 3, 4 e 1, respectivamente, para cada uma destas notas e mostre esta média acompanhada pela mensagem "Media: ". 
+            Se esta média for maior ou igual a 7.0, imprima a mensagem "Aluno aprovado.". Se a média calculada for inferior a 5.0, imprima a mensagem "Aluno reprovado.". 
+            Se a média calculada for um valor entre 5.0 e 6.9, inclusive estas, o programa deve imprimir a mensagem "Aluno em exame.".</p>
+        <p>No caso do aluno estar em exame, leia um valor correspondente à nota do exame obtida pelo aluno. 
+            Imprima então a mensagem "Nota do exame: " acompanhada pela nota digitada. 
+            Recalcule a média (some a pontuação do exame com a média anteriormente calculada e divida por 2). e imprima a mensagem "Aluno aprovado." 
+            (caso a média final seja 5.0 ou mais ) ou "Aluno reprovado.", (caso a média tenha ficado 4.9 ou menos). 
+            Para estes dois casos (aprovado ou reprovado após ter pego exame) apresente na última linha uma mensagem "Media final: "
+            seguido da média final para esse aluno.</p>
+    </div>
+    <div>
+        <p>Nota 1: <input type="number" name="nota1" id="txtn1"></p>
+        <p>Nota 2: <input type="number" name="nota2" id="txtn2"></p>
+        <p>Nota 3: <input type="number" name="nota3" id="txtn3"></p>
+        <p>Nota 4: <input type="number" name="nota4" id="txtn4"></p>
+        <p>Nota exame: <input type="number" name="exame" id="txtexame"></p>
+        <p><input type="button" value="Média" onclick="clicar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function clicar(){
+            const txn1 = document.getElementById('txtn1')
+            const txn2 = document.getElementById('txtn2')
+            const txn3 = document.getElementById('txtn3')
+            const txn4 = document.getElementById('txtn4')
+            const txexame = document.getElementById('txtexame')
+            const res = document.getElementById('res')
+            const nota1 = parseFloat(txn1.value)
+            const nota2 = parseFloat(txn2.value)
+            const nota3 = parseFloat(txn3.value)
+            const nota4 = parseFloat(txn4.value)
+            const exame = parseFloat(txexame.value)
+            const media = (nota1*2 + nota2*3 + nota3*4 + nota4*1) / 10
+            const mediaFinal = (media + exame) / 2
+            if (media >= 7.0) {
+                res.innerHTML = `Média: ${media.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno Aprovado!'
+            } else if (media < 5.0) {
+                res.innerHTML = `Média: ${media.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno Reprovado.'
+            } else {
+                if (mediaFinal > 5.0) {
+                res.innerHTML = `Média: ${media.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno em exame.<br>'
+                res.innerHTML += `Nota do exame: ${exame.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno Aprovado!<br>'
+                res.innerHTML += `Média Final: ${mediaFinal.toFixed(1)}`
+                } else {
+                res.innerHTML = `Média: ${media.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno em exame.<br>'
+                res.innerHTML += `Nota do exame: ${exame.toFixed(1)}<br>`
+                res.innerHTML += 'Aluno Reprovado.<br>'
+                res.innerHTML += `Média Final: ${mediaFinal.toFixed(1)}`
+                }
+            }
+            }
+    </script>
+</body>
+</html>

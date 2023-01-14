@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDD</title>
+</head>
+<body>
+    <h1>DDD</h1>
+    <div>
+        Leia um número inteiro que representa um código de DDD para discagem interurbana. 
+        Em seguida, informe à qual cidade o DDD pertence, considerando a tabela abaixo: 61, 71, 11, 21, 32, 19, 27 e 31.
+    </div>
+    <div>
+        <p>DDD: <input type="number" name="n1" id="txtn1"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const res = document.getElementById('res')
+        const ddd = parseInt(txvalor1.value)
+            switch (ddd) {
+                case 61:
+                    res.innerHTML = 'Brasilia'
+                    break
+                case 71:
+                    res.innerHTML = 'Salvador'
+                    break
+                case 11:
+                    res.innerHTML = 'São Paulo'
+                    break
+                case 21:
+                    res.innerHTML = 'Rio de Janeiro'
+                    break
+                case 32:
+                    res.innerHTML = 'Juiz de Fora'
+                    break
+                case 19:
+                    res.innerHTML = 'Campinas'
+                    break
+                case 27:
+                    res.innerHTML = 'Vitória'
+                    break
+                case 31:
+                    res.innerHTML = 'Belo Horizonte'
+                    break
+                default:
+                    res.innerHTML = 'DDD não cadastrado.'
+            }
+        }
+    </script>
+</body>
+</html>

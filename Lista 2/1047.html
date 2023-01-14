@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de Jogo com Minutos</title>
+</head>
+<body>
+    <h1>Tempo de Jogo com Minutos</h1>
+    <div>
+        Leia a hora inicial, minuto inicial, hora final e minuto final de um jogo. A seguir calcule a duração do jogo.
+    </div>
+    <div>
+        <p>Hora inicial: <input type="number" name="n1" id="txtn1"></p>
+        <p>Minuto inicial: <input type="number" name="n3" id="txtmin1"></p>
+        <p>Hora final: <input type="number" name="n2" id="txtn2"></p>
+        <p>Minuto final: <input type="number" name="n4" id="txtmin2"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const txmin1 = document.getElementById('txtmin1')
+        const txmin2 = document.getElementById('txtmin2')
+        const res = document.getElementById('res')
+        const n1 = parseInt(txvalor1.value)
+        const n2 = parseInt(txvalor2.value)
+        const minI = parseInt(txmin1.value)
+        const minF = parseInt(txmin2.value)
+        if (n1 > 24 || n2 > 24 || minI > 60 || minF > 60) {
+            res.innerHTML = 'POR FAVOR, INFORME UM HORÁRIO VÁLIDO'
+        } else if (n1 == n2 && minI == minF){
+            res.innerHTML = 'O JOGO DUROU = 24 HORA (S) E 0 MINUTO (S)'
+        } else if (n2 > n1) {
+            if (minI == minF) {
+                res.innerHTML = `O JOGO DUROU = ${n2-n1} HORA (S)`
+            } else if (minF > minI) {
+                res.innerHTML = `O JOGO DUROU = ${n2-n1} HORA (S) e ${minF-minI} MINUTO (S)`
+            } else {
+                res.innerHTML = `O JOGO DUROU = ${n2-n1-1} HORA (S) e ${(60-minI)+minF} MINUTO (S)`
+            }
+        } else {
+            if (minI == minF) {
+                res.innerHTML = `O JOGO DUROU = ${(24-n1)+n2} HORA (S)`
+            } else if (minF > minI) {
+                res.innerHTML = `O JOGO DUROU = ${(24-n1)+n2} HORA (S) e ${minF-minI} MINUTO (S)`
+            } else {
+                res.innerHTML = `O JOGO DUROU = ${(24-n1)+n2-1} HORA (S) e ${(60-minI)+minF} MINUTO (S)`
+            }
+        }  
+    }
+    </script>
+</body>
+</html>

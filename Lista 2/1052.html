@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mês</title>
+</head>
+<body>
+    <h1>Mês</h1>
+    <div>
+        Leia um valor inteiro entre 1 e 12, inclusive. 
+        Correspondente a este valor, deve ser apresentado como resposta o mês do ano por extenso, em inglês, com a primeira letra maiúscula.
+    </div>
+    <div>
+        <p>Valor: <input type="number" name="n1" id="txtn1"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const res = document.getElementById('res')
+        const mes = parseInt(txvalor1.value)
+            switch (mes) {
+                case 1:
+                    res.innerHTML = 'January'
+                    break
+                case 2:
+                    res.innerHTML = 'February'
+                    break
+                case 3:
+                    res.innerHTML = 'March'
+                    break
+                case 4:
+                    res.innerHTML = 'April'
+                    break
+                case 5:
+                    res.innerHTML = 'May'
+                    break
+                case 6:
+                    res.innerHTML = 'June'
+                    break
+                case 7:
+                    res.innerHTML = 'July'
+                    break
+                case 8:
+                    res.innerHTML = 'August'
+                    break
+                case 9:
+                    res.innerHTML = 'September'
+                    break
+                case 10:
+                    res.innerHTML = 'October'
+                    break
+                case 11:
+                    res.innerHTML = 'November'
+                    break
+                case 12:
+                    res.innerHTML = 'December'
+                    break
+                default:
+                    res.innerHTML = '[ERRO] Este mês não é válido.'
+            }
+        }
+    </script>
+</body>
+</html>

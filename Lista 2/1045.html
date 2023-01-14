@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Triângulos</title>
+</head>
+<body>
+    <h1>Tipos de Triângulos</h1>
+    <div>
+        Leia 3 valores de ponto flutuante A, B e C e ordene-os em ordem decrescente, de modo que o lado A representa o maior dos 3 lados. 
+        A seguir, determine o tipo de triângulo que estes três lados formam, com base nos seguintes casos, sempre escrevendo uma mensagem adequada:
+    </div>
+    <div>
+        <p>Valor 1: <input type="number" name="n1" id="txtn1"></p>
+        <p>Valor 2: <input type="number" name="n2" id="txtn2"></p>
+        <p>Valor 3: <input type="number" name="n3" id="txtn3"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const txvalor3 = document.getElementById('txtn3')
+        const res = document.getElementById('res')
+        const n1 = parseFloat(txvalor1.value)
+        const n2 = parseFloat(txvalor2.value)
+        const n3 = parseFloat(txvalor3.value)
+        // Considerando que já etá em ordem decrescente
+        if (n1>=n2+n3){
+            res.innerHTML = 'Não forma triângulo'
+        } else if (n1**2 == n2**2 + n3**2) {
+                res.innerHTML = 'Triângulo Retangulo<br>'
+            } else if(n1**2 > n2**2 + n3**2){
+                res.innerHTML = 'Triângulo Obtusangulo<br>'
+            } else if (n1**2 < n2**2 + n3**2) {
+                res.innerHTML = 'Triângulo Acutangulo<br>'
+            }
+        if(n1 == n2 && n2== n3){
+            res.innerHTML += 'Triângulo Equilatero'
+        } else if ((n1==n2 && n2!=n3) || (n1==n3 && n3!=n2) || (n2==n3 && n3!=n1)){
+            res.innerHTML += 'Triângulo Isosceles'
+        } else {
+            res.innerHTML += ' '
+        }
+        }
+    </script>
+</body>
+</html>

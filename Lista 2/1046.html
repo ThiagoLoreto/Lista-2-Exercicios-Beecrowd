@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempo de Jogo</title>
+</head>
+<body>
+    <h1>Tempo de Jogo</h1>
+    <div>
+        Leia a hora inicial e a hora final de um jogo. A seguir calcule a duração do jogo, 
+        sabendo que o mesmo pode começar em um dia e terminar em outro, tendo uma duração mínima de 1 hora e máxima de 24 horas.
+    </div>
+    <div>
+        <p>Hora inicial: <input type="number" name="n1" id="txtn1"></p>
+        <p>Hora final: <input type="number" name="n2" id="txtn2"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const res = document.getElementById('res')
+        const n1 = parseInt(txvalor1.value)
+        const n2 = parseInt(txvalor2.value)
+        if (n1 > 24 || n2 > 24) {
+            res.innerHTML = 'POR FAVOR, INFORME UM HORÁRIO VÁLIDO'
+        } else if (n1 == n2){
+            res.innerHTML = 'O JOGO DUROU = 24 HORA (S)'
+        } else if (n2 > n1) {
+            res.innerHTML = `O JOGO DUROU = ${n2-n1} HORA (S)`
+        } else {
+            res.innerHTML = `O JOGO DUROU = ${(24-n1)+n2} HORA (S)`
+        }  
+    }
+    </script>
+</body>
+</html>

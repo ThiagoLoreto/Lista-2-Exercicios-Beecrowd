@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplos</title>
+</head>
+<body>
+    <h1>Múltiplos</h1>
+    <div>
+        Leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "Sao Multiplos" ou "Nao sao Multiplos", 
+        indicando se os valores lidos são múltiplos entre si.
+    </div>
+    <div>
+        <p>Valor 1: <input type="number" name="n1" id="txtn1"></p>
+        <p>Valor 2: <input type="number" name="n2" id="txtn2"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const res = document.getElementById('res')
+        const n1 = parseInt(txvalor1.value)
+        const n2 = parseInt(txvalor2.value)
+        if(n1%n2 == 0 || n2%n1 == 0) {
+            res.innerHTML = 'São Multiplos'
+        } else {
+            res.innerHTML = 'Não são Multiplos'
+        }
+        }
+    </script>
+</body>
+</html>

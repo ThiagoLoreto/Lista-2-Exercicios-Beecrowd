@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de seleção 1</title>
+</head>
+<body> 
+    <h1>Teste de seleção 1</h1>
+    <div>
+        <p>Exercicio 1035:</p>
+        <p>Leia 4 valores inteiros A, B, C e D. A seguir, se B for maior do que C e se D for maior do que A, 
+            e a soma de C com D for maior que a soma de A e B e se C e D, ambos, 
+            forem positivos e se a variável A for par escrever a mensagem "Valores aceitos", senão escrever "Valores nao aceitos".</p>
+    </div>
+    <div>
+        <p>Número 1: <input type="number" name="numero1" id="txtn1"></p>
+        <p>Número 2: <input type="number" name="numero2" id="txtn2"></p>
+        <p>Número 3: <input type="number" name="numero3" id="txtn3"></p>
+        <p>Número 4: <input type="number" name="numero4" id="txtn4"></p>
+        <p><input type="button" value="Verificar" onclick="clicar()"></p>
+    </div>
+    <div id = 'res'></div>
+<script> 
+/* Leia 4 valores inteiros A, B, C e D. 
+A seguir, se B for maior do que C e se D for maior do que A, e a soma de C com D for maior que a soma de A e B e se C e D, 
+ambos, forem positivos e se a variável A for par escrever a mensagem "Valores aceitos", senão escrever "Valores nao aceitos".
+*/
+function clicar(){
+    let txn1 = document.getElementById('txtn1')
+    let txn2 = document.getElementById('txtn2')
+    let txn3 = document.getElementById('txtn3')
+    let txn4 = document.getElementById('txtn4')
+    let res = document.getElementById('res')
+    let n1 = parseInt(txn1.value)
+    let n2 = parseInt(txn2.value)
+    let n3 = parseInt(txn3.value)
+    let n4 = parseInt(txn4.value)
+    let somaab = n1 + n2
+    let somacd = n3 + n4
+    if (n2 > n3 && n4 > n1 && somacd > somaab && n3 > 0 && n4 > 0 && n1%2 == 0) {
+        res.innerHTML = 'Valores aceitos'
+    } else {
+        res.innerHTML = 'Valores não aceitos'
+    }
+}
+
+
+
+</script>
+
+
+</body>
+</html>

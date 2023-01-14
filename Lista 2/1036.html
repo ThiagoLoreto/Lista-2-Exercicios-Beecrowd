@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula de Bhaskara</title>
+</head>
+<body>
+    <h1>Formula de Bhaskara</h1>
+    <div>
+        <p>Exercício 1036:</p>
+        <p>Leia 3 valores de ponto flutuante e efetue o cálculo das raízes da equação de Bhaskara. 
+            Se não for possível calcular as raízes, mostre a mensagem correspondente “Impossivel calcular”, caso haja uma divisão por 0 ou raiz de numero negativo.</p>
+    </div>
+    <div>
+        <p>a = <input type="number" name="a" id="txta"></p>
+        <p>b = <input type="number" name="b" id="txtb"></p>
+        <p>c = <input type="number" name="c" id="txtc"></p>
+        <p><input type="button" value="Calcular" onclick="clicar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function clicar(){
+            let txa = document.getElementById('txta')
+            let txb = document.getElementById('txtb')
+            let txc = document.getElementById('txtc')
+            let res = document.getElementById('res')
+            let a = parseFloat(txa.value)
+            let b = parseFloat(txb.value)
+            let c = parseFloat(txc.value)
+            let delta = b**2 - 4*a*c
+            let bhaskaraPositivo = (-b + Math.sqrt(delta))/(2*a)
+            let bhaskaraNegativo = (-b - Math.sqrt(delta))/(2*a)
+            if (a == 0 || delta < 0){
+                res.innerHTML = 'Impossivel calcular'
+            } else {
+                res.innerHTML = `R1 = ${bhaskaraPositivo.toFixed(5)}<br/>`
+                res.innerHTML += `R2 = ${bhaskaraNegativo.toFixed(5)}`
+            }
+        }
+    </script>
+</body>
+</html>

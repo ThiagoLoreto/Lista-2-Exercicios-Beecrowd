@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento de Salário</title>
+</head>
+<body>
+    <h1>Aumento de Salário</h1>
+    <div>
+        A empresa ABC resolveu conceder um aumento de salários a seus funcionários de acordo com a tabela abaixo:
+    </div>
+    <div>
+        <p>Salário: <input type="number" name="n1" id="txtn1"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const res = document.getElementById('res')
+        const salario = parseFloat(txvalor1.value)
+        if (salario < 0) {
+            res.innerHTML = 'Por favor, escreva um salário válido'
+        } else if (salario <= 400.00) {
+            res.innerHTML = `Novo salário = ${(salario*1.15).toFixed(2)}<br>`
+            res.innerHTML += `Reaguste ganho = ${(salario*0.15).toFixed(2)}<br>`
+            res.innerHTML += 'Em percentual: 15%'
+        } else if (salario <= 800.00) {
+            res.innerHTML = `Novo salário = ${(salario*1.12).toFixed(2)}<br>`
+            res.innerHTML += `Reaguste ganho = ${(salario*0.12).toFixed(2)}<br>`
+            res.innerHTML += 'Em percentual: 12%'
+        } else if (salario <= 1200.00) {
+            res.innerHTML = `Novo salário = ${(salario*1.10).toFixed(2)}<br>`
+            res.innerHTML += `Reaguste ganho = ${(salario*0.10).toFixed(2)}<br>`
+            res.innerHTML += 'Em percentual: 10%'
+        } else if (salario <= 2000.00) {
+            res.innerHTML = `Novo salário = ${(salario*1.07).toFixed(2)}<br>`
+            res.innerHTML += `Reaguste ganho = ${(salario*0.07).toFixed(2)}<br>`
+            res.innerHTML += 'Em percentual: 7%'
+        } else {
+            res.innerHTML = `Novo salário = ${(salario*1.04).toFixed(2)}<br>`
+            res.innerHTML += `Reaguste ganho = ${(salario*0.04).toFixed(2)}<br>`
+            res.innerHTML += 'Em percentual: 4%'
+        }
+        }
+    </script>
+</body>
+</html>

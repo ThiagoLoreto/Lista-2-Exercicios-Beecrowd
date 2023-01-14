@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort Simples</title>
+</head>
+<body>
+    <h1>Sort Simples</h1>
+    <div>Leia 3 valores inteiros e ordene-os em ordem crescente. 
+        No final, mostre os valores em ordem crescente, uma linha em branco e em seguida, os valores na sequência como foram lidos.</div>
+    <div>
+        <p>Valor 1: <input type="number" name="n1" id="txtn1"></p>
+        <p>Valor 2: <input type="number" name="n2" id="txtn2"></p>
+        <p>Valor 3: <input type="number" name="n3" id="txtn3"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+        <div id = 'res'></div>
+    </div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const txvalor3 = document.getElementById('txtn3')
+        const res = document.getElementById('res')
+        const n1 = parseInt(txvalor1.value)
+        const n2 = parseInt(txvalor2.value)
+        const n3 = parseInt(txvalor3.value)
+        if(n1 > n2 && n2 > n3) {
+            res.innerHTML = `${n3}<br>`
+            res.innerHTML += `${n2}<br>`
+            res.innerHTML += `${n1}`
+        } else if(n2 > n1 && n1 > n3) {
+            res.innerHTML = `${n3}<br>`
+            res.innerHTML += `${n1}<br>`
+            res.innerHTML += `${n2}`
+        } else if(n3 > n2 && n2 > n1) {
+            res.innerHTML = `${n1}<br>`
+            res.innerHTML += `${n2}<br>`
+            res.innerHTML += `${n3}`
+        } else if(n2 > n3 && n3 > n1) {
+            res.innerHTML = `${n1}<br>`
+            res.innerHTML += `${n3}<br>`
+            res.innerHTML += `${n2}`
+        } else if(n3 > n1 && n1 > n2) {
+            res.innerHTML = `${n2}<br>`
+            res.innerHTML += `${n1}<br>`
+            res.innerHTML += `${n3}`
+        } else {
+            res.innerHTML = `${n2}<br>`
+            res.innerHTML += `${n3}<br>`
+            res.innerHTML += `${n1}`
+        }
+        res.innerHTML += ` <p>`
+        res.innerHTML += `${n1}<br>`
+        res.innerHTML += `${n2}<br>`
+        res.innerHTML += `${n3}`
+        }
+    </script>
+</body>
+</html>
+
+

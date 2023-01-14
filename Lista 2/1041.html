@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordenadas de um Ponto</title>
+</head>
+<body>
+    <h1>Coordenadas de um Ponto</h1>
+    <div>Leia 2 valores com uma casa decimal (x e y), que devem representar as coordenadas de um ponto em um plano. 
+        A seguir, determine qual o quadrante ao qual pertence o ponto, ou se está sobre um dos eixos cartesianos ou na origem (x = y = 0).
+    </div>
+    <div>
+        <p>Valor 1: <input type="number" name="valor1" id="txtvalor1"></p>
+        <p>Valor 2: <input type="number" name="valor2" id="txtvalor2"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar(){
+            const txvalor1 = document.getElementById('txtvalor1')
+            const txvalor2 = document.getElementById('txtvalor2')
+            const res = document.getElementById('res')
+            const valor1 = parseFloat(txvalor1.value)
+            const valor2 = parseFloat(txvalor2.value)
+            if (valor1 === 0.0 && valor2 === 0.0) {
+                res.innerHTML = 'Origem'
+            } else if (valor1 > 0 && valor2 > 0) {
+                res.innerHTML = 'Q1'
+            } else if (valor1 > 0 && valor2 < 0) {
+                res.innerHTML = 'Q4'
+            } else if (valor1 < 0 && valor2 > 0) {
+                res.innerHTML = 'Q2'
+            } else {
+                res.innerHTML = 'Q3'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triângulo</title>
+</head>
+<body>
+    <h1>Triângulo</h1>
+    <div>
+        <p>Leia 3 valores reais (A, B e C) e verifique se eles formam ou não um triângulo. 
+            Em caso positivo, calcule o perímetro do triângulo e apresente a mensagem:</p>
+        <p>Em caso negativo, calcule a área do trapézio que tem A e B como base e C como altura, mostrando a mensagem:</p>
+    </div>
+    <div>
+        <p>Valor 1: <input type="number" name="n1" id="txtn1"></p>
+        <p>Valor 2: <input type="number" name="n2" id="txtn2"></p>
+        <p>Valor 3: <input type="number" name="n3" id="txtn3"></p>
+        <p><input type="button" value="Verificar" onclick="verificar()"></p>
+    </div>
+    <div id = 'res'></div>
+    <script>
+        function verificar() {
+        const txvalor1 = document.getElementById('txtn1')
+        const txvalor2 = document.getElementById('txtn2')
+        const txvalor3 = document.getElementById('txtn3')
+        const res = document.getElementById('res')
+        const n1 = parseFloat(txvalor1.value)
+        const n2 = parseFloat(txvalor2.value)
+        const n3 = parseFloat(txvalor3.value)
+        const areatrapezio = (n1 + n2) * n3 / 2
+        const perimetrotriangulo = n1 + n2 + n3
+        if(n1 + n2 <= n3 || n1 + n3 <= n2 || n2 + n3 <= n1) {
+            res.innerHTML = `Área = ${areatrapezio.toFixed(1)}`
+        } else {
+            res.innerHTML = `Perimetro = ${perimetrotriangulo.toFixed(1)}`
+        }
+        }
+    </script>
+</body>
+</html>

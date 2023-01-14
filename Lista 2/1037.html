@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intervalo</title>
+</head>
+<body>
+<h1>Intervalo</h1>
+<div>Você deve fazer um programa que leia um valor qualquer e apresente uma mensagem dizendo em qual dos seguintes intervalos 
+    ([0,25], (25,50], (50,75], (75,100]) este valor se encontra. 
+    Obviamente se o valor não estiver em nenhum destes intervalos, deverá ser impressa a mensagem “Fora de intervalo”.</div>
+<div>
+    <p>Numero: <input type="number" name="numero" id="txtnumero"></p>
+    <p><input type="button" value="Verificar" onclick="verificar()"></p>
+</div>
+<div id = 'res'></div>
+    <script>
+        function verificar() {
+            const txn = document.getElementById('txtnumero')
+            const res = document.getElementById('res')
+            const numero = parseFloat(txn.value)
+            if (numero < 0 || numero > 100) {
+            res.innerHTML = 'Fora do Intervalo'
+        } else if (numero <= 25) {
+            res.innerHTML = 'Intervalo [0,25]'
+        } else if (numero <= 50){
+            res.innerHTML = 'Intervalo (25,50]'
+        } else if (numero <= 75){
+            res.innerHTML = 'Intervalo (50,75]'
+        } else {
+            res.innerHTML = 'Intervalo (75,100]) '
+        }
+        } 
+        
+    </script>
+</body>
+
+</html>
